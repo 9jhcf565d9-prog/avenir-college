@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Avenir College — Образование будущего</title>
+    <!-- Современные шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header id="header">
+        <div class="container navbar">
+            <a href="#home" class="logo-container">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                </div>
+                <span class="logo-text">AVENIR <span>COLLEGE</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#home" data-i18n="nav_home" onclick="closeMobileMenu()">Главная</a></li>
+                    <li><a href="#about" data-i18n="nav_about" onclick="closeMobileMenu()">О колледже</a></li>
+                    <li><a href="#programs" data-i18n="nav_programs" onclick="closeMobileMenu()">Специальности</a></li>
+                    <li><a href="#admission" data-i18n="nav_admission" onclick="closeMobileMenu()">Поступление</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <!-- Переключатель языка -->
+                    <div class="lang-switcher">
+                        <button onclick="setLanguage('ru')" id="btnRu" class="lang-btn active">RU</button>
+                        <button onclick="setLanguage('en')" id="btnEn" class="lang-btn">EN</button>
+                    </div>
+                    <button class="btn btn-primary" onclick="openModal(); closeMobileMenu();" data-i18n="btn_register">Регистрация</button>
+                </div>
+            </nav>
+
+            <!-- Кнопка мобильного меню -->
+            <button class="burger-btn" id="burgerBtn" onclick="toggleMobileMenu()" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Главный экран (Hero) -->
+    <section id="home" class="hero">
+        <div class="hero-glow"></div>
+        <div class="container hero-content">
+            <span class="badge" data-i18n="hero_badge">Приемная комиссия 2026 открыта</span>
+            <h1 data-i18n="hero_title">Добро пожаловать в Avenir College</h1>
+            <p data-i18n="hero_desc">Ваш цифровой путеводитель по учебе, расписанию и студенческой жизни. Получите востребованную профессию в современной IT и бизнес-среде.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary btn-lg" onclick="openModal()" data-i18n="btn_apply">Подать заявку</button>
+                <a href="#programs" class="btn btn-outline btn-lg" data-i18n="btn_explore">Смотреть программы</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок статистики -->
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>94%</h3>
+                <p data-i18n="stat_1">Трудоустройство выпускников</p>
+            </div>
+            <div class="stat-item">
+                <h3>12+</h3>
+                <p data-i18n="stat_2">Актуальных направлений</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p data-i18n="stat_3">Практико-ориентированное обучение</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p data-i18n="stat_4">Доступ к цифровому порталу</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- О колледже (About) -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="about_tag">Почему выбирают нас</span>
+                <h2 data-i18n="about_title">О колледже</h2>
+                <p class="section-desc" data-i18n="about_desc">Avenir College — это современное учебное заведение, которое помогает студентам получить качественное образование и востребованные навыки для будущей карьеры.</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3 data-i18n="card1_title">Современные классы</h3>
+                    <p data-i18n="card1_desc">Оборудованные аудитории, высокоскоростной интернет и компьютерные лаборатории для комфортного обучения.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 data-i18n="card2_title">Опытные преподаватели</h3>
+                    <p data-i18n="card2_desc">Практикующие специалисты и профессионалы своего дела, готовые поддержать каждого студента.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3 data-i18n="card3_title">Студенческая жизнь</h3>
+                    <p data-i18n="card3_desc">Хакатоны, интересные мероприятия, клубы по интересам, дебаты и спортивные секции.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Специальности (Programs) -->
+    <section id="programs" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="prog_tag">Направления обучения</span>
+                <h2 data-i18n="prog_title">Популярные специальности</h2>
+                <p class="section-desc" data-i18n="prog_desc">Выберите направление, которое откроет двери в ведущие компании страны и мира.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="program-card">
+                    <span class="prog-duration" data-i18n="prog_dur_1">2 года 10 мес.</span>
+                    <h3 data-i18n="prog1_title">Программная инженерия</h3>
+                    <p data-i18n="prog1_desc">Разработка веб-приложений, мобильных систем, базы данных и современные языки программирования.</p>
+                    <button class="link-btn" onclick="openModal()" data-i18n="prog_btn">Поступить на курс &rarr;</button>
+                </div>
+                <div class="program-card">
+                    <span class="prog-duration" data-i18n="prog_dur_2">2 года 10 мес.</span>
+                    <h3 data-i18n="prog2_title">Цифровой дизайн и UI/UX</h3>
+                    <p data-i18n="prog2_desc">Проектирование интерфейсов, графический дизайн, брендинг и работа с современными визуальными инструментами.</p>
+                    <button class="link-btn" onclick="openModal()" data-i18n="prog_btn">Поступить на курс &rarr;</button>
+                </div>
+                <div class="program-card">
+                    <span class="prog-duration" data-i18n="prog_dur_3">2 года 10 мес.</span>
+                    <h3 data-i18n="prog3_title">Экономика и IT-менеджмент</h3>
+                    <p data-i18n="prog3_desc">Управление проектами, цифровая аналитика, основы предпринимательства и финансовое планирование.</p>
+                    <button class="link-btn" onclick="openModal()" data-i18n="prog_btn">Поступить на курс &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Поступление (Admission) -->
+    <section id="admission" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="adm_tag">Как стать студентом</span>
+                <h2 data-i18n="admission_title">Поступление</h2>
+                <p class="section-desc" data-i18n="admission_desc">Хотите стать частью нашего колледжа? Вот три простых шага для поступления:</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">01</span>
+                    </div>
+                    <h3 data-i18n="step1_title">Выбор специальности</h3>
+                    <p data-i18n="step1_desc">Ознакомьтесь с доступными направлениями обучения на нашем сайте и выберите подходящее.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                    </div>
+                    <h3 data-i18n="step2_title">Подача документов</h3>
+                    <p data-i18n="step2_desc">Заполните онлайн-заявку через форму регистрации на портале или обратитесь в приемную комиссию.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">03</span>
+                    </div>
+                    <h3 data-i18n="step3_title">Зачисление</h3>
+                    <p data-i18n="step3_desc">Пройдите вступительное собеседование, подпишите договор и начните учебу в Avenir College!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">AVENIR <span>COLLEGE</span></span>
+                <p data-i18n="footer_slogan">Инновационное образование для нового поколения специалистов.</p>
+                
+                <!-- Адрес колледжа -->
+                <div class="footer-address">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <a href="https://2gis.kg/bishkek/search/%D0%9E%D0%B3%D0%BE%D0%BD%D0%B1%D0%B0%D0%B5%D0%B2%D0%B0%20%D0%90%D1%82%D0%B0%D1%8F%2C%2060" target="_blank" rel="noopener" data-i18n="footer_address">
+                        г. Бишкек, ул. Атая Огонбаева, 60
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    <span data-i18n="footer_copy">&copy; 2026 Avenir College. Все права защищены.</span> | 
+                    <a href="https://avcollege.edu.kg" target="_blank" rel="noopener">avcollege.edu.kg</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно регистрации -->
+    <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+        <div class="modal-card">
+            <button class="close-btn" onclick="closeModal()" aria-label="Закрыть">&times;</button>
+            <h2 data-i18n="modal_title">Создать аккаунт</h2>
+            <p data-i18n="modal_desc">Заполните форму для регистрации на образовательном портале</p>
+            
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label for="fullname" data-i18n="form_name">ФИО</label>
+                    <input type="text" id="fullname" data-i18n-placeholder="ph_name" placeholder="Иванов Иван Иванович" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" data-i18n="form_email">Электронная почта</label>
+                    <input type="email" id="email" placeholder="example@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" data-i18n="form_phone">Номер телефона</label>
+                    <input type="tel" id="phone" placeholder="+996 (___) __-__-__" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role" data-i18n="form_role">Статус</label>
+                    <select id="role" required>
+                        <option value="applicant" data-i18n="role_applicant">Абитуриент</option>
+                        <option value="student" data-i18n="role_student">Студент</option>
+                        <option value="parent" data-i18n="role_parent">Родитель</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" data-i18n="form_pass">Пароль</label>
+                    <input type="password" id="password" placeholder="••••••••" minlength="6" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary form-submit" data-i18n="form_submit">Зарегистрироваться</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span data-i18n="success_msg">Регистрация прошла успешно!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script>
+        const translations = {
+            ru: {
+                title: "Avenir College — Образование будущего",
+                nav_home: "Главная",
+                nav_about: "О колледже",
+                nav_programs: "Специальности",
+                nav_admission: "Поступление",
+                btn_register: "Регистрация",
+                hero_badge: "Приемная комиссия 2026 открыта",
+                hero_title: "Добро пожаловать в Avenir College",
+                hero_desc: "Ваш цифровой путеводитель по учебе, расписанию и студенческой жизни. Получите востребованную профессию в современной IT и бизнес-среде.",
+                btn_apply: "Подать заявку",
+                btn_explore: "Смотреть программы",
+                stat_1: "Трудоустройство выпускников",
+                stat_2: "Актуальных направлений",
+                stat_3: "Практико-ориентированное обучение",
+                stat_4: "Доступ к цифровому порталу",
+                about_tag: "Почему выбирают нас",
+                about_title: "О колледже",
+                about_desc: "Avenir College — это современное учебное заведение, которое помогает студентам получить качественное образование и востребованные навыки для будущей карьеры.",
+                card1_title: "Современные классы",
+                card1_desc: "Оборудованные аудитории, высокоскоростной интернет и компьютерные лаборатории для комфортного обучения.",
+                card2_title: "Опытные преподаватели",
+                card2_desc: "Практикующие специалисты и профессионалы своего дела, готовые поддержать каждого студента.",
+                card3_title: "Студенческая жизнь",
+                card3_desc: "Хакатоны, интересные мероприятия, клубы по интересам, дебаты и спортивные секции.",
+                prog_tag: "Направления обучения",
+                prog_title: "Популярные специальности",
+                prog_desc: "Выберите направление, которое откроет двери в ведущие компании страны и мира.",
+                prog_dur_1: "2 года 10 мес.",
+                prog_dur_2: "2 года 10 мес.",
+                prog_dur_3: "2 года 10 мес.",
+                prog1_title: "Программная инженерия",
+                prog1_desc: "Разработка веб-приложений, мобильных систем, базы данных и современные языки программирования.",
+                prog2_title: "Цифровой дизайн и UI/UX",
+                prog2_desc: "Проектирование интерфейсов, графический дизайн, брендинг и работа с современными визуальными инструментами.",
+                prog3_title: "Экономика и IT-менеджмент",
+                prog3_desc: "Управление проектами, цифровая аналитика, основы предпринимательства и финансовое планирование.",
+                prog_btn: "Поступить на курс →",
+                adm_tag: "Как стать студентом",
+                admission_title: "Поступление",
+                admission_desc: "Хотите стать частью нашего колледжа? Вот три простых шага для поступления:",
+                step1_title: "Выбор специальности",
+                step1_desc: "Ознакомьтесь с доступными направлениями обучения на нашем сайте и выберите подходящее.",
+                step2_title: "Подача документов",
+                step2_desc: "Заполните онлайн-заявку через форму регистрации на портале или обратитесь в приемную комиссию.",
+                step3_title: "Зачисление",
+                step3_desc: "Пройдите вступительное собеседование, подпишите договор и начните учебу в Avenir College!",
+                footer_slogan: "Инновационное образование для нового поколения специалистов.",
+                footer_address: "г. Бишкек, ул. Атая Огонбаева, 60",
+                footer_copy: "© 2026 Avenir College. Все права защищены.",
+                modal_title: "Создать аккаунт",
+                modal_desc: "Заполните форму для регистрации на образовательном портале",
+                form_name: "ФИО",
+                ph_name: "Иванов Иван Иванович",
+                form_email: "Электронная почта",
+                form_phone: "Номер телефона",
+                form_role: "Статус",
+                role_applicant: "Абитуриент",
+                role_student: "Студент",
+                role_parent: "Родитель",
+                form_pass: "Пароль",
+                form_submit: "Зарегистрироваться",
+                success_msg: "Регистрация прошла успешно!"
+            },
+            en: {
+                title: "Avenir College — Education of the Future",
+                nav_home: "Home",
+                nav_about: "About",
+                nav_programs: "Programs",
+                nav_admission: "Admission",
+                btn_register: "Sign Up",
+                hero_badge: "Admissions 2026 Open",
+                hero_title: "Welcome to Avenir College",
+                hero_desc: "Your digital guide to studies, schedules, and campus life. Gain an in-demand profession in a modern IT and business environment.",
+                btn_apply: "Apply Now",
+                btn_explore: "Explore Programs",
+                stat_1: "Graduate Employment Rate",
+                stat_2: "Relevant Study Programs",
+                stat_3: "Practice-Oriented Learning",
+                stat_4: "Digital Portal Access",
+                about_tag: "Why Choose Us",
+                about_title: "About College",
+                about_desc: "Avenir College is a modern educational institution that helps students gain quality education and essential skills for their future careers.",
+                card1_title: "Modern Classrooms",
+                card1_desc: "Equipped lecture halls, high-speed internet, and computer labs for a comfortable learning environment.",
+                card2_title: "Experienced Teachers",
+                card2_desc: "Practicing specialists and professionals dedicated to supporting every student along the way.",
+                card3_title: "Campus Life",
+                card3_desc: "Hackathons, engaging events, interest clubs, debates, and sports sections.",
+                prog_tag: "Fields of Study",
+                prog_title: "Popular Programs",
+                prog_desc: "Choose a major that opens doors to leading national and international companies.",
+                prog_dur_1: "2 yrs 10 mos",
+                prog_dur_2: "2 yrs 10 mos",
+                prog_dur_3: "2 yrs 10 mos",
+                prog1_title: "Software Engineering",
+                prog1_desc: "Web and mobile app development, databases, and modern programming languages.",
+                prog2_title: "Digital Design & UI/UX",
+                prog2_desc: "Interface design, graphic design, branding, and working with modern visual tools.",
+                prog3_title: "Economics & IT Management",
+                prog3_desc: "Project management, digital analytics, entrepreneurship fundamentals, and financial planning.",
+                prog_btn: "Apply for Program →",
+                adm_tag: "How to Join",
+                admission_title: "Admission",
+                admission_desc: "Want to become a part of our college? Here are three simple steps to apply:",
+                step1_title: "Choose a Program",
+                step1_desc: "Explore the available majors and study fields on our website and pick the right one.",
+                step2_title: "Submit Documents",
+                step2_desc: "Fill out the online application form on the portal or contact the admissions office.",
+                step3_title: "Enrollment",
+                step3_desc: "Pass the entrance interview, sign the agreement, and start studying at Avenir College!",
+                footer_slogan: "Innovative education for a new generation of professionals.",
+                footer_address: "60 Atay Ogonbaev St., Bishkek",
+                footer_copy: "© 2026 Avenir College. All rights reserved.",
+                modal_title: "Create Account",
+                modal_desc: "Fill out the form to register on the educational portal",
+                form_name: "Full Name",
+                ph_name: "John Doe",
+                form_email: "Email Address",
+                form_phone: "Phone Number",
+                form_role: "Status",
+                role_applicant: "Applicant",
+                role_student: "Student",
+                role_parent: "Parent",
+                form_pass: "Password",
+                form_submit: "Register",
+                success_msg: "Registration successful!"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.getElementById('htmlRoot').setAttribute('lang', lang);
+            document.getElementById('btnRu').classList.toggle('active', lang === 'ru');
+            document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.setAttribute('placeholder', translations[lang][key]);
+                }
+            });
+        }
+
+        // Мобильное меню
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.getElementById('burgerBtn').classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('navMenu').classList.remove('open');
+            document.getElementById('burgerBtn').classList.remove('active');
+        }
+
+        // Модальное окно
+        function openModal() {
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function handleOverlayClick(event) {
+            if (event.target.id === 'modalOverlay') {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function handleRegister(event) {
+            event.preventDefault();
+            const form = document.getElementById('registerForm');
+            const msg = document.getElementById('successMessage');
+            
+            form.style.display = 'none';
+            msg.style.display = 'flex';
+
+            setTimeout(() => {
+                closeModal();
+                setTimeout(() => {
+                    form.reset();
+                    form.style.display = 'block';
+                    msg.style.display = 'none';
+                }, 300);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
